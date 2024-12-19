@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paytm-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: paytm-frontend
+  template:
+    metadata:
+      labels:
+        app: paytm-frontend
+    spec:
+      containers:
+      - name: paytm-frontend
+        image: darshanreddypuli/paytm:frontend-latest
+        ports:
+        - containerPort: 5173

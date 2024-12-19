@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: paytm-backend
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: paytm-backend
+  template:
+    metadata:
+      labels:
+        app: paytm-backend
+    spec:
+      containers:
+      - name: paytm-backend
+        image: darshanreddypuli/paytm:backend
+        ports:
+        - containerPort: 3000
